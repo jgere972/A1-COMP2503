@@ -26,5 +26,9 @@ public class Avenger {
 	public int getNameCount() {return nameCount;}
 	public int getAliasCount() {return aliasCount;}
 	public int getActorCount() {return actorCount;}
+	public void setNameCount(int i) {nameCount = i;}
+	public void setAliasCount(int i) {aliasCount = i;}
+	public void setActorCount(int i) {actorCount = i;}
+	
 	
 }
