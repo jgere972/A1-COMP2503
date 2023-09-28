@@ -1,34 +1,51 @@
 
-public class Avenger {
+public class Avenger implements Comparable<Avenger> {
 
-	private String name;
-	private String alias;
-	private String actor;
-	private int nameCount;
-	private int aliasCount;
-	private int actorCount;
+	private String heroName;
+	private String heroAlias;
+	private String performer;
+	private int nameFreq;
+	private int aliasFreq;
+	private int performerFreq;
 
 	public Avenger() {
-		name = "";
-		alias = "";
-		actor = "";
-		nameCount = 0;
-		aliasCount = 0;
-		actorCount = 0;
+			heroName = "";
+		heroAlias = "";
+		performer = "";
+		nameFreq = 0;
+		aliasFreq = 0;
+		performerFreq = 0;
 	}
 	
-	public void setName(String n) {name = n;}
-	public void setAlias (String a) {alias = a;}
-	public void setActor (String a) {actor = a;}
-	public String getName() {return name;}
-	public String getAlias() {return alias;}
-	public String getActor() {return actor;}
-	public int getNameCount() {return nameCount;}
-	public int getAliasCount() {return aliasCount;}
-	public int getActorCount() {return actorCount;}
-	public void setNameCount(int i) {nameCount = i;}
-	public void setAliasCount(int i) {aliasCount = i;}
-	public void setActorCount(int i) {actorCount = i;}
+	public void setHeroName(String n) {heroName = n;}
+	public void setHeroAlias (String a) {heroAlias = a;}
+	public void setPerformer (String a) {performer = a;}
+	public String getHeroName() {return heroName;}
+	public String getHeroAlias() {return heroAlias;}
+	public String getPerformer() {return performer;}
 	
+	public void setNameFreq(int i) {nameFreq = i;}
+	public void setAliasFreq(int i) {aliasFreq = i;}
+	public void setPerformerFreq(int i) {performerFreq = i;}
+	public int getNameFreq() {return nameFreq;}
+	public int getAliasFreq() {return aliasFreq;}
+	public int getPerformerFreq() {return performerFreq;}
+	
+	@Override
+	public String toString() {
+		String format = heroAlias + "aka" + heroName + " performed by " + performer + " mentioned " + "(n: " + nameFreq + " +a: " + aliasFreq + " +p: " + performerFreq + ")" + "time(s)";
+		return format;
+	}
+
+	@Override
+	public int compareTo(Avenger o) {
+		int result = this.getHeroAlias().compareTo(o.getHeroAlias());
+		return result;
+	}
+	
+	public boolean equals(Avenger a) {
+		if (this.equals(a)) {return true;}
+		else {return false;}
+	}
 	
 }

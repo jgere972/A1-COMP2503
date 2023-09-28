@@ -1,32 +1,31 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Manager {
-private Scanner input;	
+public class A1 {
 	
 	public static void main(String[] args) {
-		Manager manager = new Manager();
-		manager.run();
+		A1 a1 = new A1();
+		a1.run();
 	}	
 	
 	public void run() {
 		ArrayList<Avenger> avengers = new ArrayList<Avenger>();
-		input = new Scanner(System.in);
+		Scanner input = new Scanner(System.in);
 		int wordCount = 0;
 		while (input.hasNext()) {
 				String word = input.next();
 				word = word.trim().toLowerCase().split("'")[0].replaceAll("[^a-zA-Z\\s]", "");
 				if (word.length() != 0) wordCount ++;
-				for (int index = 0; index < avengers.size(); index++) {
+				for (Avenger avenger: avengers) {
 					if (avengers.size() != 0) {
-						if (word.equals(avenger.getName())) {
-							avenger.setNameCount(avenger.getNameCount + 1);
+						if (word.equals(avenger.getHeroName())) {
+							avenger.setNameFreq(avenger.getNameFreq() + 1);
 						}
-						if (word.equals(avenger.getAlias())) {
-							avenger.setAliasCount(avenger.getAliasCount + 1);
+						if (word.equals(avenger.getHeroAlias())) {
+							avenger.setAliasFreq(avenger.getAliasFreq() + 1);
 						}
-						if (word.equals(avenger.getActor())) {
-							avenger.setActorCount(avenger.getActorCount + 1);
+						if (word.equals(avenger.getPerformer())) {
+							avenger.setPerformerFreq(avenger.getPerformerFreq() + 1);
 						}
 					}
 					else {
