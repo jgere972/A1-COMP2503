@@ -9,7 +9,7 @@ public class Avenger implements Comparable<Avenger> {
 	private int performerFreq;
 
 	public Avenger() {
-			heroName = "";
+		heroName = "";
 		heroAlias = "";
 		performer = "";
 		nameFreq = 0;

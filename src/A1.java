@@ -9,6 +9,28 @@ public class A1 {
 	}	
 	
 	public void run() {
+		
+		String[] validAvengers = {"captianamerica, rogers, evans",
+								  "ironman, stark, downey",
+								  "blackwidow, romanoff, johansson",
+								  "hulk, banner, ruffalo",
+								  "blackpanther, tchalla, boseman",
+								  "thor, odinson, hemsworth",
+								  "hawkeye, barton, renner",
+								  "warmachine, rhodes, cheadle",
+								  "spiderman, parker, holland",
+								  "wintersoldier, barnes, stan"};
+		//edit to become array of array of string, then edit code to check if 
+		//word.equals(validAvengers[currAvenger][0/1/2]) where 0 is name, 1 is alias, 
+		//2 is performer, separate if statements though
+		//for (Avenger avenger: avengers) {
+		//if (word.equals(validAvengers[currAvenger][0] {
+		// something about the name
+		//if (word.equals(validAvengers[currAvenger][1] {
+		// something about the alias
+		//if (word.equals(validAvengers[currAvenger][2] {
+		// something about the performer
+		
 		ArrayList<Avenger> avengers = new ArrayList<Avenger>();
 		Scanner input = new Scanner(System.in);
 		int wordCount = 0;
