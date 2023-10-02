@@ -11,48 +11,32 @@ public class A1 {
 	public void run() {
 		int currentAvenger = 0;
 		int currentName = 0;
-		String[][] validAvengers = new String[currentAvenger][currentName];
-		validAvengers[0][0] = "captainamerica";
-		validAvengers[0][1] = "rogers";
-		validAvengers[0][2] = "evans";
+		String[][] validAvengers = {
+				{"captainamerica", "rogers", "evans"}, 
+				{"ironman", "stark", "downey"},
+				{"blackwidow", "romanoff", "johansson"}, 
+				{"hulk", "banner", "ruffalo"},
+				{"blackpanther", "tchalla", "boseman"}, 
+				{"thor", "odinson", "hemsworth"},
+				{"hawkeye", "barton", "renner"}, 
+				{"warmachine", "rhodes", "cheadle"},
+				{"spiderman", "parker", "holland"}, 
+				{"wintersoldier", "barnes", "stan"}
+		};
 		
-		validAvengers[1][0] = "ironman";
-		validAvengers[1][1] = "stark";
-		validAvengers[1][2] = "downey";
-		
-		validAvengers[2][0] = "blackwidow";
-		validAvengers[2][1] = "romanoff";
-		validAvengers[2][2] = "johansson";
-		
-		validAvengers[3][0] = "hulk";
-		validAvengers[3][1] = "banner";
-		validAvengers[3][2] = "ruffalo";
-		
-		validAvengers[4][0] = "blackpanther";
-		validAvengers[4][1] = "tchalla";
-		validAvengers[4][2] = "boseman";
-
-		validAvengers[5][0] = "thor";
-		validAvengers[5][1] = "odinson";
-		validAvengers[5][2] = "hemsworth";
-
-		validAvengers[6][0] = "hawkeye";
-		validAvengers[6][1] = "barton";
-		validAvengers[6][2] = "renner";
-		
-		validAvengers[7][0] = "warmachine";
-		validAvengers[7][1] = "rhodes";
-		validAvengers[7][2] = "cheadle";
-		
-		validAvengers[8][0] = "spiderman";
-		validAvengers[8][1] = "parker";
-		validAvengers[8][2] = "holland";
-
-		validAvengers[9][0] = "wintersoldier";
-		validAvengers[9][1] = "barnes";
-		validAvengers[9][2] = "stan";
 		
 		ArrayList<Avenger> avengers = new ArrayList<Avenger>();
+		Avenger captainAmerica;
+		Avenger ironMan;
+		Avenger blackWidow;
+		Avenger hulk;
+		Avenger blackPanther;
+		Avenger thor;
+		Avenger hawkEye;
+		Avenger warMachine;
+		Avenger spiderMan;
+		Avenger winterSoldier;
+		
 		Scanner input = new Scanner(System.in);
 		int wordCount = 0;
 		int avengerCount = 0;
@@ -62,100 +46,160 @@ public class A1 {
 				if (word.length() != 0) wordCount ++;
 				
 				for (currentAvenger = 0; currentAvenger < 10; currentAvenger ++) {
-					if (word.equals(validAvengers[currentAvenger][0])) {
+					if (word.equals(validAvengers[currentAvenger][currentName])) {
 						switch(currentAvenger) {
 						case 0:
-							break; // captainameruca
+							captainAmerica = new Avenger(validAvengers[0][0],validAvengers[0][1],validAvengers[0][2]);
+
+							if (avengers.contains(captainAmerica) == false) {
+								avengers.add(captainAmerica);
+							}
+							if (currentName == 0) {
+								captainAmerica.setNameFreq(captainAmerica.getNameFreq()+1);
+							}
+							else if (currentName == 1) {
+								captainAmerica.setAliasFreq(captainAmerica.getAliasFreq()+1);
+							}
+							else if (currentName == 2) {
+								captainAmerica.setPerformerFreq(captainAmerica.getPerformerFreq()+1);
+							}
+								
 						case 1:
-							break; // ironman
+							ironMan = new Avenger(validAvengers[1][0],validAvengers[1][1],validAvengers[1][2]);
+							
+							if (avengers.contains(ironMan) == false) {
+								avengers.add(ironMan);
+							}							
+							if (currentName == 0) {
+								ironMan.setNameFreq(ironMan.getNameFreq()+1);
+							}
+							else if (currentName == 1) {
+								ironMan.setAliasFreq(ironMan.getAliasFreq()+1);
+							}
+							else if (currentName == 2) {
+								ironMan.setPerformerFreq(ironMan.getPerformerFreq()+1);
+							}						
+							
 						case 2:
-							break; // blackwidow
+							blackWidow = new Avenger(validAvengers[2][0],validAvengers[2][1],validAvengers[2][2]);
+							if (avengers.contains(blackWidow) == false) {
+								avengers.add(blackWidow);
+							}
+							if (currentName == 0) {
+								blackWidow.setNameFreq(blackWidow.getNameFreq()+1);
+							}
+							else if (currentName == 1) {
+								blackWidow.setAliasFreq(blackWidow.getAliasFreq()+1);
+							}
+							else if (currentName == 2) {
+								blackWidow.setPerformerFreq(blackWidow.getPerformerFreq()+1);
+							}						
+							
 						case 3:
-							break; // hulk
+							hulk = new Avenger(validAvengers[3][0],validAvengers[3][1],validAvengers[3][2]);
+							if (avengers.contains(hulk) == false) {
+								avengers.add(hulk);
+							}							
+							if (currentName == 0) {
+								hulk.setNameFreq(hulk.getNameFreq()+1);
+							}
+							else if (currentName == 1) {
+								hulk.setAliasFreq(hulk.getAliasFreq()+1);
+							}
+							else if (currentName == 2) {
+								hulk.setPerformerFreq(hulk.getPerformerFreq()+1);
+							}						
+							
 						case 4:
-							break; // blackpanther
+							blackPanther = new Avenger(validAvengers[4][0],validAvengers[4][1],validAvengers[4][2]);
+							if (avengers.contains(blackPanther) == false) {
+								avengers.add(blackPanther);
+							}
+							if (currentName == 0) {
+								blackPanther.setNameFreq(blackPanther.getNameFreq()+1);
+							}
+							else if (currentName == 1) {
+								blackPanther.setAliasFreq(blackPanther.getAliasFreq()+1);
+							}
+							else if (currentName == 2) {
+								blackPanther.setPerformerFreq(blackPanther.getPerformerFreq()+1);
+							}
+							
 						case 5:
-							break; // thor
+							thor = new Avenger(validAvengers[5][0],validAvengers[5][1],validAvengers[5][2]);
+							if (avengers.contains(thor) == false) {
+								avengers.add(thor);
+							}
+							if (currentName == 0) {
+								thor.setNameFreq(thor.getNameFreq()+1);
+							}
+							else if (currentName == 1) {
+								thor.setAliasFreq(thor.getAliasFreq()+1);
+							}
+							else if (currentName == 2) {
+								thor.setPerformerFreq(thor.getPerformerFreq()+1);
+							}
+							
 						case 6:
-							break; // hawkeye
+							hawkEye = new Avenger(validAvengers[6][0],validAvengers[6][1],validAvengers[6][2]);
+							if (avengers.contains(hawkEye) == false) {
+								avengers.add(hawkEye);
+							}
+							if (currentName == 0) {
+								hawkEye.setNameFreq(hawkEye.getNameFreq()+1);
+							}
+							else if (currentName == 1) {
+								hawkEye.setAliasFreq(hawkEye.getAliasFreq()+1);
+							}
+							else if (currentName == 2) {
+								hawkEye.setPerformerFreq(hawkEye.getPerformerFreq()+1);
+							}
+							
 						case 7:
-							break; // warmachine
+							warMachine = new Avenger(validAvengers[7][0],validAvengers[7][1],validAvengers[7][2]);
+							if (avengers.contains(warMachine) == false) {
+								avengers.add(warMachine);
+							}
+							if (currentName == 0) {
+								warMachine.setNameFreq(warMachine.getNameFreq()+1);
+							}
+							else if (currentName == 1) {
+								warMachine.setAliasFreq(warMachine.getAliasFreq()+1);
+							}
+							else if (currentName == 2) {
+								warMachine.setPerformerFreq(warMachine.getPerformerFreq()+1);
+							}
+							
 						case 8: 
-							break; // spiderman
+							spiderMan = new Avenger(validAvengers[8][0],validAvengers[8][1],validAvengers[8][2]);
+							if (avengers.contains(spiderMan) == false) {
+								avengers.add(spiderMan);
+							}
+							if (currentName == 0) {
+								spiderMan.setNameFreq(spiderMan.getNameFreq()+1);
+							}
+							else if (currentName == 1) {
+								spiderMan.setAliasFreq(spiderMan.getAliasFreq()+1);
+							}
+							else if (currentName == 2) {
+								spiderMan.setPerformerFreq(spiderMan.getPerformerFreq()+1);
+							}
+							
 						case 9: 
-							break; // wintersoldier
+							winterSoldier = new Avenger(validAvengers[9][0],validAvengers[9][1],validAvengers[9][2]);
+							if (avengers.contains(winterSoldier) == false) {
+								avengers.add(winterSoldier);
+							}
+							if (currentName == 0) {
+								winterSoldier.setNameFreq(winterSoldier.getNameFreq()+1);
+							}
+							else if (currentName == 1) {
+								winterSoldier.setAliasFreq(winterSoldier.getAliasFreq()+1);
+							}
+							else if (currentName == 2) {
+								winterSoldier.setPerformerFreq(winterSoldier.getPerformerFreq()+1);
+							}
 						}
-					}
-					else if (word.equals(validAvengers[currentAvenger][1])) {
-						switch(currentAvenger) {
-						case 0:
-							break; // rogers
-						case 1:
-							break; // stark
-						case 2:
-							break; // romanoff
-						case 3:
-							break; // banner
-						case 4:
-							break; // tchalla
-						case 5:
-							break; // odinson
-						case 6:
-							break; // barton
-						case 7:
-							break; // rhodes
-						case 8: 
-							break; // holland
-						case 9: 
-							break; // barnes
-						}
-					}
-					else if (word.equals(validAvengers[currentAvenger][2])) {
-						switch(currentAvenger) {
-						case 0:
-							break; // evans
-						case 1:
-							break; // downey
-						case 2:
-							break; // johansson
-						case 3:
-							break; // ruffalo
-						case 4:
-							break; // boseman
-						case 5:
-							break; // hemsworth
-						case 6:
-							break; // renner
-						case 7:
-							break; // cheadle
-						case 8: 
-							break; // holland
-						case 9: 
-							break; // stan
-						}
-					}
-					else {
-						// some about adding a new avenger to the list
-					}
-				}
-				
-				for (Avenger avenger: avengers) {
-					if (avengers.size() != 0) {
-						if (word.equals(avenger.getHeroName())) {
-							avenger.setNameFreq(avenger.getNameFreq() + 1);
-						}
-						if (word.equals(avenger.getHeroAlias())) {
-							avenger.setAliasFreq(avenger.getAliasFreq() + 1);
-						}
-						if (word.equals(avenger.getPerformer())) {
-							avenger.setPerformerFreq(avenger.getPerformerFreq() + 1);
-						}
-					}
-					else {
-						// use this to add a new avenger to avengers list
-						// need to figure out how to bring out the avengers 
-						// from the list to assign avenger to current in list
-						avengerCount ++;
 					}
 				}
 			}

@@ -8,13 +8,13 @@ public class Avenger implements Comparable<Avenger> {
 	private int aliasFreq;
 	private int performerFreq;
 
-	public Avenger() {
-		heroName = "";
-		heroAlias = "";
-		performer = "";
-		nameFreq = 0;
-		aliasFreq = 0;
-		performerFreq = 0;
+	public Avenger(String heroName, String heroAlias, String performer) {
+		this.heroName = heroName;
+		this.heroAlias = heroAlias;
+		this.performer = performer;
+		this.nameFreq = 0;
+		this.aliasFreq = 0;
+		this.performerFreq = 0;
 	}
 	
 	public void setHeroName(String n) {heroName = n;}
