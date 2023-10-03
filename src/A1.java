@@ -36,7 +36,7 @@ public class A1 {
 
 	public void run() {
 		readInput();
-		printResults();
+		printResults(avengersList);
 	}
 
 	public void readInput() {
@@ -139,7 +139,7 @@ public class A1 {
 				}
 			}
 			input.close();
-			// Generating Lists
+			// Generating Avenger List
 			avengersList.add(cptAmerica);
 			avengersList.add(ironMan);
 			avengersList.add(blackWidow);
@@ -150,18 +150,13 @@ public class A1 {
 			avengersList.add(warMachine);
 			avengersList.add(spiderMan);
 			avengersList.add(winterSoldier);
-
-			
-
-
-			printResults();
 		} catch (FileNotFoundException e) {
 			System.out.println("File not Found: " + e.getLocalizedMessage());
 			e.printStackTrace();
 		}
 	}
 
-	public void printResults() {
+	public void printResults(ArrayList<Avenger> av) {
 		/*
 		 * Make sure your format matches the sample output exactly. No extra empty
 		 * lines, or text. Use the diff command to check if your output matches the
@@ -174,19 +169,17 @@ public class A1 {
 		// Print all ordered by appearance
 		System.out.println("All avengers in the order they appeared in the input stream:");
 		// Todo: Print the list of avengers in the order they appeared in the input)
-		for(int i = 0; i < avengersList.size(); i++) {
-			System.out.println(avengersList.get(i).toString());
+		for(int i = 0; i < av.size(); i++) {
+			System.out.println(av.get(i).toString());
 			}
 		
 		// Print all ordered by AvengerComparatorFreqDesc
 		System.out.println("Top " + topN + " most popular avengers:");
 		// Todo: Print the topN most popular avengers
-		Collections.sort(avengersList, new Comparator<Avenger>() {
+		Collections.sort(av, new Comparator<Avenger>() {
 			@Override
 			public int compare(Avenger a, Avenger b) {
-			int totCountDiff = (b.getActorCount() + b.getAliasCount() + a.getNameCount()) // Descending by
-																											// total
-																											// mentions
+			int totCountDiff = (b.getActorCount() + b.getAliasCount() + a.getNameCount()) // Descending by total mentions
 			- (a.getActorCount() + a.getAliasCount() + a.getNameCount());
 			int nameDiff = a.getName().compareTo(b.getName()); // Ascending alphabetical order of Name
 			// Breaking Ties
@@ -197,14 +190,14 @@ public class A1 {
 				}
 			}
 					});
-		for(int i = 0; i < avengersList.size(); i++) {
-			System.out.println(avengersList.get(i).toString());
+		for(int i = 0; i < av.size(); i++) {
+			System.out.println(av.get(i).toString());
 			}
 		
 		// Print top n ordered by AvengerPerformerComparatorFreqDesc
 		System.out.println("Top " + topN + " most popular performers:");
 		// Todo: Print the topN most popular performers
-		Collections.sort(avengersList, new Comparator<Avenger>() {
+		Collections.sort(av, new Comparator<Avenger>() {
 			@Override
 			public int compare(Avenger a, Avenger b) {
 				int actCountdiff = b.getActorCount() - a.getActorCount(); // Descending Actor mentions
@@ -222,16 +215,16 @@ public class A1 {
 				}
 			}
 		});
-		for(int i = 0; i < avengersList.size(); i++) {
-			System.out.println(avengersList.get(i).toString());
+		for(int i = 0; i < av.size(); i++) {
+			System.out.println(av.get(i).toString());
 			}
 		
 		// Print all ordered by alias alphabetically
 		System.out.println("All mentioned avengers in alphabetical order:");
 		// Todo: Print the list of avengers in alphabetical order
-		Collections.sort(avengersList);
-		for(int i = 0; i < avengersList.size(); i++) {
-		System.out.println(avengersList.get(i).toString());
+		Collections.sort(av);
+		for(int i = 0; i < av.size(); i++) {
+		System.out.println(av.get(i).toString());
 		}
 	}
 }
