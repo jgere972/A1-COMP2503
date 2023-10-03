@@ -214,7 +214,7 @@ public class A1 {
 	 private void printResults() {
 	    	
 	        // Sort the avengersArrayList alphabetically by alias
-	        Collections.sort(avengers);
+		 	Collections.sort(avengers, new AvengerAliasComparator());
 
 	        System.out.println("Total number of words: " + wordCount);
 	        System.out.println("Number of Avengers Mentioned: " + avengers.size());
@@ -263,6 +263,14 @@ public class A1 {
         public int compare(Avenger a1, Avenger a2) {
         	
             return Integer.compare(a2.getPerformerFreq(), a1.getPerformerFreq());
+        }
+    }
+    
+    class AvengerAliasComparator implements Comparator<Avenger> {
+    	
+        @Override
+        public int compare(Avenger a1, Avenger a2) {
+            return a1.getHeroAlias().compareTo(a2.getHeroAlias());
         }
     }
 }
