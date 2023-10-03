@@ -30,6 +30,7 @@ public class Avenger implements Comparable<Avenger> {
 	public int getNameFreq() {return nameFreq;}
 	public int getAliasFreq() {return aliasFreq;}
 	public int getPerformerFreq() {return performerFreq;}
+	public int getTotalMentionFrequency() {return nameFreq + aliasFreq + performerFreq;}
 	
 	@Override
 	public String toString() {

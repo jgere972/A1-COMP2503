@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class A1 {
@@ -203,12 +204,25 @@ public class A1 {
 					}
 				}
 			}
-		System.out.println("Total number of words: " + wordCount);
-		System.out.println("Number of Avengers mentioned: " + avengerCount);
-		System.out.println(); // list of avengers in order
-		System.out.println(); // 4 most frequent avengers, by order of appearance count, ties go by order of last name a-z
-							// appearanceCount = avenger.getNameCount() + avenger.getAliasCount + avenger.getActorCount
-		System.out.println(); // 4 most frequent actors, ties are broken by hero name length then ascending alias
-		System.out.println(); // avengers in alphabetical order by 	alias a-z
 	}
+	
+    // Compares total mention frequencies of avengers in descending order
+    class AvengerTotalFreq implements Comparator<Avenger> {
+    	
+        @Override
+        public int compare(Avenger a1, Avenger a2) {
+        	
+            return Integer.compare(a2.getTotalMentionFrequency(), a1.getTotalMentionFrequency());
+        }
+    }
+
+    // Compares performer frequencies of avengers in descending order
+    class AvengerPerformerFreq implements Comparator<Avenger> {
+    	
+        @Override
+        public int compare(Avenger a1, Avenger a2) {
+        	
+            return Integer.compare(a2.getPerformerFreq(), a1.getPerformerFreq());
+        }
+    }
 }
