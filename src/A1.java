@@ -170,12 +170,14 @@ public class A1 {
 		System.out.println("Total number of words: " + totalwordcount);
 		System.out.println("Number of Avengers Mentioned: " + avengersList.size());
 		System.out.println();
-
+		
 		// Print all ordered by appearance
 		System.out.println("All avengers in the order they appeared in the input stream:");
 		// Todo: Print the list of avengers in the order they appeared in the input)
-		System.out.println();
-
+		for(int i = 0; i < avengersList.size(); i++) {
+			System.out.println(avengersList.get(i).toString());
+			}
+		
 		// Print all ordered by AvengerComparatorFreqDesc
 		System.out.println("Top " + topN + " most popular avengers:");
 		// Todo: Print the topN most popular avengers
@@ -198,10 +200,10 @@ public class A1 {
 		for(int i = 0; i < avengersList.size(); i++) {
 			System.out.println(avengersList.get(i).toString());
 			}
+		
 		// Print top n ordered by AvengerPerformerComparatorFreqDesc
 		System.out.println("Top " + topN + " most popular performers:");
-		// Todo: Print the topN most popular performers, see the instructions for tie
-		// Ordering for most popular Performers
+		// Todo: Print the topN most popular performers
 		Collections.sort(avengersList, new Comparator<Avenger>() {
 			@Override
 			public int compare(Avenger a, Avenger b) {
@@ -223,6 +225,7 @@ public class A1 {
 		for(int i = 0; i < avengersList.size(); i++) {
 			System.out.println(avengersList.get(i).toString());
 			}
+		
 		// Print all ordered by alias alphabetically
 		System.out.println("All mentioned avengers in alphabetical order:");
 		// Todo: Print the list of avengers in alphabetical order
