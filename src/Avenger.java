@@ -9,28 +9,16 @@ public class Avenger implements Comparable<Avenger> {
 	private int actorCount;
 
 	// Constructor
-	public Avenger() {
-		name = "";
-		alias = "";
-		actor = "";
+	public Avenger(String alias, String name, String actor) {
+		this.name = name;
+		this.alias = alias;
+		this.actor = actor;
 		nameCount = 0;
 		aliasCount = 0;
 		actorCount = 0;
 	}
 
-	// Getters and setters
-	public void setName(String n) {
-		name = n;
-	}
-
-	public void setAlias(String a) {
-		alias = a;
-	}
-
-	public void setActor(String a) {
-		actor = a;
-	}
-
+	// Getters
 	public String getName() {
 		return name;
 	}
@@ -42,7 +30,6 @@ public class Avenger implements Comparable<Avenger> {
 	public String getActor() {
 		return actor;
 	}
-
 	public int getNameCount() {
 		return nameCount;
 	}
@@ -54,9 +41,21 @@ public class Avenger implements Comparable<Avenger> {
 	public int getActorCount() {
 		return actorCount;
 	}
+	//Incrementing the Counters
+	public void incrementNameCount() {
+		nameCount++;
+	}
+
+	public void incrementAliasCount() {
+		aliasCount++;
+	}
+
+	public void incrementActorCount() {
+		actorCount++;
+	}
 
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(Object obj) {		//Matching compareTo to order Alias alphabetically
 		if (obj == null) {
 			return false;
 		}
@@ -64,8 +63,7 @@ public class Avenger implements Comparable<Avenger> {
 			return true;
 		}
 		Avenger av = (Avenger) obj;
-		if (this.actor.compareTo(av.getActor()) == 0 || this.alias.compareTo(av.getAlias()) == 0
-				|| this.name.compareTo(av.getName()) == 0) {
+		if (this.alias.compareTo(av.getAlias()) == 0) {
 			return true;
 		} else {
 			return false;
@@ -73,8 +71,20 @@ public class Avenger implements Comparable<Avenger> {
 	}
 
 	@Override
-	public int compareTo(Avenger a) {
-		return 0;
+	public int compareTo(Avenger a) {		//Order Alias alphabetically
+		int orderAlphAlias = this.alias.compareTo(a.getAlias());
+		return orderAlphAlias;
+	}
+	@Override
+	public String toString() {
+		String format;
+		return format = alias + " aka " + name
+				+ " performed by " + actor
+				+ " mentioned "
+				+ "(n: " + nameCount
+				+ " + a: " + aliasCount
+				+ " + p: " + actorCount
+				+ ")" + " time(s)";
 	}
 
 }
