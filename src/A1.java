@@ -4,43 +4,46 @@ import java.util.Scanner;
 
 public class A1 {
 	
+	int currentAvenger = 0;
+	int currentName = 0;
+	String[][] validAvengers = {
+			{"captainamerica", "rogers", "evans"}, 
+			{"ironman", "stark", "downey"},
+			{"blackwidow", "romanoff", "johansson"}, 
+			{"hulk", "banner", "ruffalo"},
+			{"blackpanther", "tchalla", "boseman"}, 
+			{"thor", "odinson", "hemsworth"},
+			{"hawkeye", "barton", "renner"}, 
+			{"warmachine", "rhodes", "cheadle"},
+			{"spiderman", "parker", "holland"}, 
+			{"wintersoldier", "barnes", "stan"}
+	};
+	ArrayList<Avenger> avengers = new ArrayList<Avenger>();
+	Avenger captainAmerica;
+	Avenger ironMan;
+	Avenger blackWidow;
+	Avenger hulk;
+	Avenger blackPanther;
+	Avenger thor;
+	Avenger hawkEye;
+	Avenger warMachine;
+	Avenger spiderMan;
+	Avenger winterSoldier;
+	Scanner input = new Scanner(System.in);
+	int wordCount = 0;
+	int avengerCount = 0;
+	
 	public static void main(String[] args) {
 		A1 a1 = new A1();
 		a1.run();
 	}	
 	
 	public void run() {
-		int currentAvenger = 0;
-		int currentName = 0;
-		String[][] validAvengers = {
-				{"captainamerica", "rogers", "evans"}, 
-				{"ironman", "stark", "downey"},
-				{"blackwidow", "romanoff", "johansson"}, 
-				{"hulk", "banner", "ruffalo"},
-				{"blackpanther", "tchalla", "boseman"}, 
-				{"thor", "odinson", "hemsworth"},
-				{"hawkeye", "barton", "renner"}, 
-				{"warmachine", "rhodes", "cheadle"},
-				{"spiderman", "parker", "holland"}, 
-				{"wintersoldier", "barnes", "stan"}
-		};
-		
-		
-		ArrayList<Avenger> avengers = new ArrayList<Avenger>();
-		Avenger captainAmerica;
-		Avenger ironMan;
-		Avenger blackWidow;
-		Avenger hulk;
-		Avenger blackPanther;
-		Avenger thor;
-		Avenger hawkEye;
-		Avenger warMachine;
-		Avenger spiderMan;
-		Avenger winterSoldier;
-		
-		Scanner input = new Scanner(System.in);
-		int wordCount = 0;
-		int avengerCount = 0;
+		readInput();
+		// printResults();
+	}
+	
+	public void readInput() {
 		while (input.hasNext()) {
 				String word = input.next();
 				word = word.trim().toLowerCase().split("'")[0].replaceAll("[^a-zA-Z\\s]", "");
