@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
@@ -32,6 +33,7 @@ public class A1 {
 	Scanner input = new Scanner(System.in);
 	int wordCount = 0;
 	int avengerCount = 0;
+	private int topN = 4;
 	
 	public static void main(String[] args) {
 		A1 a1 = new A1();
@@ -40,7 +42,7 @@ public class A1 {
 	
 	public void run() {
 		readInput();
-		// printResults();
+		printResults();
 	}
 	
 	public void readInput() {
@@ -208,6 +210,41 @@ public class A1 {
 				}
 			}
 	}
+	
+	 private void printResults() {
+	    	
+	        // Sort the avengersArrayList alphabetically by alias
+	        Collections.sort(avengers);
+
+	        System.out.println("Total number of words: " + wordCount);
+	        System.out.println("Number of Avengers Mentioned: " + avengers.size());
+	        System.out.println();
+
+	        // Print all ordered by appearance
+	        System.out.println("All avengers in the order they appeared in the input stream:");
+	        for (Avenger avenger : avengers) {
+	            System.out.println(avenger.toString());
+	        }
+	        System.out.println();
+
+			// Print all ordered by AvengerComparatorFreqDesc
+			System.out.println("Top " + topN + " most popular avengers:");
+			// Todo: Print the topN most popular avengers, see the instructions for tie breaking
+			// Make sure you follow the formatting example in the sample output
+			System.out.println();
+
+			// Print top n ordered by AvengerPerformerComparatorFreqDesc
+			System.out.println("Top " + topN + " most popular performers:");
+			// Todo: Print the topN most popular performers, see the instructions for tie breaking
+			// Make sure you follow the formatting example in the sample output	
+			System.out.println();
+
+			// Print all ordered by alias alphabetically
+			System.out.println("All mentioned avengers in alphabetical order:");
+			// Todo: Print the list of avengers in alphabetical order
+			// Make sure you follow the formatting example in the sample output
+			System.out.println();
+	    }
 	
     // Compares total mention frequencies of avengers in descending order
     class AvengerTotalFreq implements Comparator<Avenger> {
