@@ -46,24 +46,14 @@ public class A1 {
 	}
 	
 	public boolean checkIfExists(Avenger a, ArrayList<Avenger> l) {
-		if (l.contains(a)) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		if (l.contains(a)) return true;
+		else return false;
 	}
 	
 	public Avenger nameChecker(Avenger a, int currentName ) {
-		if (currentName == 0) {
-			a.setNameFreq(a.getNameFreq()+1);
-		}
-		else if (currentName == 1) {
-			a.setAliasFreq(a.getAliasFreq()+1);
-		}
-		else {
-			a.setPerformerFreq(a.getPerformerFreq()+1);
-		}
+		if (currentName == 0) a.increaseNameCount();
+		else if (currentName == 1) a.increaseAliasCount();
+		else if (currentName == 2) a.increasePerformerCount();
 		return a;
 	}
 	
@@ -82,60 +72,61 @@ public class A1 {
 									avengers.add(captainAmerica = new Avenger(validAvengers[0][0],validAvengers[0][1],validAvengers[0][2]));
 								}
 								captainAmerica = nameChecker(captainAmerica,currentName);
-									
+								break;
 							case 1:			
 								if (checkIfExists(ironMan, avengers) == false) {
 									avengers.add(ironMan = new Avenger(validAvengers[1][0],validAvengers[1][1],validAvengers[1][2]));
 								}
 								ironMan = nameChecker(ironMan,currentName);
-								
+								break;
 							case 2:
 								if (checkIfExists(blackWidow, avengers) == false) {
 									avengers.add(blackWidow = new Avenger(validAvengers[2][0],validAvengers[2][1],validAvengers[2][2]));
 								}
 								blackWidow = nameChecker(blackWidow,currentName);
-								
+								break;
 							case 3:
 								if (checkIfExists(hulk, avengers) == false) {
 									avengers.add(hulk = new Avenger(validAvengers[3][0],validAvengers[3][1],validAvengers[3][2]));
 								}
 								hulk = nameChecker(hulk,currentName);
-								
+								break;
 							case 4:
 								if (checkIfExists(blackPanther, avengers) == false) {
 									avengers.add(blackPanther = new Avenger(validAvengers[4][0],validAvengers[4][1],validAvengers[4][2]));
 								}
 								blackPanther = nameChecker(blackPanther,currentName);
-								
+								break;
 							case 5:
 								if (checkIfExists(thor, avengers) == false) {
 									avengers.add(thor = new Avenger(validAvengers[5][0], validAvengers[5][1], validAvengers [5][2]));
 								}
 								thor = nameChecker(thor,currentName);
-								
+								break;
 							case 6:
 								if (checkIfExists(hawkEye, avengers) == false) {
 									avengers.add(hawkEye = new Avenger(validAvengers[6][0],validAvengers[6][1],validAvengers[6][2]));
 								}
 								hawkEye = nameChecker(hawkEye,currentName);
-								
+								break;
 							case 7:
 								if (checkIfExists(warMachine, avengers) == false) {
 									avengers.add(warMachine = new Avenger(validAvengers[7][0],validAvengers[7][1],validAvengers[7][2]));
 								}
 								warMachine = nameChecker(warMachine,currentName);
-								
+								break;
 							case 8: 
 								if (checkIfExists(spiderMan, avengers) == false) {
 									avengers.add(spiderMan = new Avenger(validAvengers[8][0],validAvengers[8][1],validAvengers[8][2]));
 								}
 								spiderMan = nameChecker(spiderMan,currentName);
-								
+								break;
 							case 9: 
 								if (checkIfExists(winterSoldier, avengers) == false) {
 									avengers.add(winterSoldier = new Avenger(validAvengers[9][0],validAvengers[9][1],validAvengers[9][2]));
 								}
 								winterSoldier = nameChecker(winterSoldier,currentName);
+								break;
 							}
 						}
 						else {

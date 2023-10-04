@@ -17,24 +17,30 @@ public class Avenger implements Comparable<Avenger> {
 		this.performerFreq = 0;
 	}
 	
-	public void setHeroName(String n) {heroName = n;}
-	public void setHeroAlias (String a) {heroAlias = a;}
-	public void setPerformer (String a) {performer = a;}
-	public String getHeroName() {return heroName;}
-	public String getHeroAlias() {return heroAlias;}
-	public String getPerformer() {return performer;}
+	public void setHeroName(String n) {this.heroName = n;}
+	public void setHeroAlias (String a) {this.heroAlias = a;}
+	public void setPerformer (String a) {this.performer = a;}
 	
-	public void setNameFreq(int i) {nameFreq = i;}
-	public void setAliasFreq(int i) {aliasFreq = i;}
-	public void setPerformerFreq(int i) {performerFreq = i;}
-	public int getNameFreq() {return nameFreq;}
-	public int getAliasFreq() {return aliasFreq;}
-	public int getPerformerFreq() {return performerFreq;}
-	public int getTotalMentionFrequency() {return nameFreq + aliasFreq + performerFreq;}
+	public String getHeroName() {return this.heroName;}
+	public String getHeroAlias() {return this.heroAlias;}
+	public String getPerformer() {return this.performer;}
+	
+	public void setNameFreq(int i) {this.nameFreq = i;}
+	public void setAliasFreq(int i) {this.aliasFreq = i;}
+	public void setPerformerFreq(int i) {this.performerFreq = i;}
+	
+	public int getNameFreq() {return this.nameFreq;}
+	public int getAliasFreq() {return this.aliasFreq;}
+	public int getPerformerFreq() {return this.performerFreq;}
+	public int getTotalMentionFrequency() {return this.nameFreq + this.aliasFreq + this.performerFreq;}
+	
+	public void increaseNameCount() {nameFreq ++;}
+	public void increaseAliasCount() {aliasFreq ++;}
+	public void increasePerformerCount() {performerFreq ++;}
 	
 	@Override
 	public String toString() {
-		String format = heroAlias + " aka " + heroName + " performed by " + performer + " mentioned " + "(n: " + nameFreq + " + a: " + aliasFreq + " + p: " + performerFreq + ")" + " time(s)";
+		String format = heroName + " aka " + heroAlias + " performed by " + performer + " mentioned " + "(n: " + nameFreq + " + a: " + aliasFreq + " + p: " + performerFreq + ")" + " time(s)";
 		return format;
 	}
 
