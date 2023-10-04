@@ -218,7 +218,6 @@ public class A1 {
 		for(int i = 0; i < av.size(); i++) {
 			System.out.println(av.get(i).toString());
 			}
-		
 		// Print all ordered by alias alphabetically
 		System.out.println("All mentioned avengers in alphabetical order:");
 		// Todo: Print the list of avengers in alphabetical order
