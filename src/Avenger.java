@@ -34,9 +34,9 @@ public class Avenger implements Comparable<Avenger> {
 	public int getPerformerFreq() {return this.performerFreq;}
 	public int getTotalMentionFrequency() {return this.nameFreq + this.aliasFreq + this.performerFreq;}
 	
-	public void increaseNameCount() {nameFreq ++;}
-	public void increaseAliasCount() {aliasFreq ++;}
-	public void increasePerformerCount() {performerFreq ++;}
+	public void increaseNameFreq() {nameFreq ++;}
+	public void increaseAliasFreq() {aliasFreq ++;}
+	public void increasePerformerFreq() {performerFreq ++;}
 	
 	@Override
 	public String toString() {
