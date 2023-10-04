@@ -34,7 +34,7 @@ public class Avenger implements Comparable<Avenger> {
 	
 	@Override
 	public String toString() {
-		String format = heroAlias + "aka" + heroName + " performed by " + performer + " mentioned " + "(n: " + nameFreq + " +a: " + aliasFreq + " +p: " + performerFreq + ")" + "time(s)";
+		String format = heroAlias + " aka " + heroName + " performed by " + performer + " mentioned " + "(n: " + nameFreq + " + a: " + aliasFreq + " + p: " + performerFreq + ")" + " time(s)";
 		return format;
 	}
 
