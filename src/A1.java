@@ -150,10 +150,10 @@ public class A1 {
 	        }
 	        System.out.println();
 
-	     // Print all ordered by AvengerComparatorFreqDesc
+
  			System.out.println("Top " + topN + " most popular avengers:");
- 			// Todo: Print the topN most popular avengers
- 			Collections.sort(avengers, new Comparator<Avenger>() {
+
+ 			Collections.sort(avengers, new AvengerTotalFreq() {
  				@Override
  				public int compare(Avenger a, Avenger b) {
  					int totCountDiff = (b.getPerformerFreq() + b.getAliasFreq() + b.getNameFreq()) // Descending by total
@@ -174,8 +174,8 @@ public class A1 {
  			System.out.println();
  			
  			System.out.println("Top " + topN + " most popular performers:");
-			// Todo: Print the topN most popular performers
-			Collections.sort(avengers, new Comparator<Avenger>() {
+
+			Collections.sort(avengers, new AvengerPerformerFreq() {
 				@Override
 				public int compare(Avenger a, Avenger b) {
 					int actCountdiff = b.getPerformerFreq() - a.getPerformerFreq(); // Descending Actor mentions
