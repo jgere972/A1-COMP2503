@@ -51,8 +51,8 @@ public class A1 {
 	}
 	
 	public Avenger nameChecker(Avenger a, int currentName ) {
-		if (currentName == 0) a.increaseNameFreq();
-		if (currentName == 1) a.increaseAliasFreq();
+		if (currentName == 0) a.increaseAliasFreq();
+		if (currentName == 1) a.increaseNameFreq();
 		if (currentName == 2) a.increasePerformerFreq();
 		return a;
 	}
