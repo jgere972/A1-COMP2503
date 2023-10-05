@@ -150,16 +150,15 @@ public class A1 {
 	        }
 	        System.out.println();
 
-
- 			System.out.println("Top " + topN + " most popular avengers:");
-
+	        // print top n avengers
+	        System.out.println("Top " + topN + " most popular avengers:");
  			Collections.sort(avengers, new AvengerTotalFreq() {
  				@Override
  				public int compare(Avenger a, Avenger b) {
  					int totCountDiff = (b.getPerformerFreq() + b.getAliasFreq() + b.getNameFreq()) // Descending by total
  																									// mentions
  							- (a.getPerformerFreq() + a.getAliasFreq() + a.getNameFreq());
- 					int nameDiff = a.getHeroName().compareTo(b.getHeroName()); // Ascending alphabetical order of Name
+ 					int nameDiff = a.getPerformer().compareTo(b.getPerformer()); // Ascending alphabetical order of Name
  					// Breaking Ties
  					if (totCountDiff == 0) {
  						return nameDiff;
@@ -173,30 +172,34 @@ public class A1 {
  			}
  			System.out.println();
  			
- 			System.out.println("Top " + topN + " most popular performers:");
-
-			Collections.sort(avengers, new AvengerPerformerFreq() {
-				@Override
-				public int compare(Avenger a, Avenger b) {
-					int actCountdiff = b.getPerformerFreq() - a.getPerformerFreq(); // Descending Actor mentions
-					int lengDiff = a.getHeroName().length() - b.getHeroName().length(); // Ascending of name's length
-					int aliasDiff = a.getHeroAlias().compareTo(b.getHeroAlias()); // Ascending alphabetical order of Alias
-					// Breaking Ties
-					if (actCountdiff == 0) {
-						if (lengDiff == 0) {
-							return aliasDiff;
-						} else {
-							return lengDiff;
-						}
-					} else {
-						return actCountdiff;
-					}
-				}
-			});
-			for (int i = 0; i < topN; i++) {
-				System.out.println(avengers.get(i).toString());
-			}
-			System.out.println();
+ 			
+// 			USE JOSEPHS POPULAR PERFORMERS
+// 			System.out.println("Top " + topN + " most popular performers:");
+//
+//			Collections.sort(avengers, new AvengerPerformerFreq() {
+//				@Override
+//				public int compare(Avenger a, Avenger b) {
+//					int actCountdiff = b.getPerformerFreq() - a.getPerformerFreq(); // Descending Actor mentions
+//					int lengDiff = a.getHeroName().length() - b.getHeroName().length(); // Ascending of name's length
+//					int aliasDiff = a.getHeroAlias().compareTo(b.getHeroAlias()); // Ascending alphabetical order of Alias
+//					// Breaking Ties
+//					if (actCountdiff == 0) {
+//						if (lengDiff == 0) {
+//							return aliasDiff;
+//						} 
+//						else {
+//							return lengDiff;
+//						}
+//					} 
+//					else {
+//						return actCountdiff;
+//					}
+//				}
+//			});
+//			for (int i = 0; i < topN; i++) {
+//				System.out.println(avengers.get(i).toString());
+//			}
+//			System.out.println();
 
 			
 			// Sort the avengersArrayList alphabetically by alias
@@ -233,7 +236,7 @@ public class A1 {
     	
         @Override
         public int compare(Avenger a1, Avenger a2) {
-            return a1.getHeroAlias().compareTo(a2.getHeroAlias());
+            return a1.getHeroName().compareTo(a2.getHeroName());
         }
     }
 }
