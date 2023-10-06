@@ -1,4 +1,3 @@
-
 public class Avenger implements Comparable<Avenger> {
 
 	private String name;
@@ -77,8 +76,7 @@ public class Avenger implements Comparable<Avenger> {
 	}
 	@Override
 	public String toString() {
-		String format;
-		return format = alias + " aka " + name
+		return  alias + " aka " + name
 				+ " performed by " + actor
 				+ " mentioned "
 				+ "(n: " + nameCount
