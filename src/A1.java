@@ -30,16 +30,27 @@ public class A1 {
 	private Avenger winterSoldier = new Avenger(avengerRoster[9][0], avengerRoster[9][1], avengerRoster[9][2]);
 	private ArrayList<Avenger> possibleAvengers = new ArrayList<>();
 
+	/**
+	 * Initializes the program manager 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		A1 manager = new A1();
 		manager.run();
 	}
-
+	
+	/**
+	 * Calls the readInput method to read from the input stream,
+	 * then calls the printResults once every word is processed
+	 */
 	public void run() {
 		readInput();
 		printResults(avengersList);
 	}
 
+	/**
+	 * Reads words from the input stream and processes them accordingly
+	 */
 	public void readInput() {
 		input = new Scanner(System.in);
 		while (input.hasNext()) {
